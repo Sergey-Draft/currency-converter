@@ -130,7 +130,13 @@ export function CurrencyConverter() {
         <div className="currency-converter-status-bar">
           <div className={`status-indicator ${isOnline ? 'online' : 'offline'}`}>
           {isOnline ? <span className="status-icon"><img src="/icons/wifi-on-icon.png" alt="Wi-Fi" /></span> 
-          : <span className="status-icon"><img src="/icons/wifi-off-icon.png" alt="Wi-Fi" /></span>}
+          : <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="12" height="12" fill="none">
+          <path d="M2 8.82a16 16 0 0 1 20 0" stroke="#C10007" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6.8 13.2a9.33 9.33 0 0 1 10.4 0" stroke="#C10007" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="18" r="1.8" fill="#C10007"/>
+          <line x1="3" y1="3" x2="21" y2="21" stroke="#C10007" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        }
             {isOnline ? 'Online' : 'Offline'}
           </div>
           {cacheTimestamp && (
