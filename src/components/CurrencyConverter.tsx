@@ -8,7 +8,6 @@ import { debounce } from '../utils/debounce';
 import { CurrencySelector } from './CurrencySelector';
 import  CURRENCIES_DATA  from '../data/currencies.json';
 import type { Currency, CurrencyPair } from '../types';
-import wifiOff from '../assets/wifi-off-icon.png';
 import './CurrencyConverter.css';
 
 export function CurrencyConverter() {
@@ -131,7 +130,7 @@ export function CurrencyConverter() {
         <div className="currency-converter-status-bar">
           <div className={`status-indicator ${isOnline ? 'online' : 'offline'}`}>
           {isOnline ? <span className="status-icon"><img src="/icons/wifi-on-icon.png" alt="Wi-Fi" /></span> 
-          : <span className="status-icon">{wifiOff}</span>}
+          : <span className="status-icon"><img src="/assets/wifi-off-icon.png" alt="Wi-Fi" /></span>}
             {isOnline ? 'Online' : 'Offline'}
           </div>
           {cacheTimestamp && (
