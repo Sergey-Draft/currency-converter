@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { ExchangeRates } from '../types';
 
 export function convertCurrency(
@@ -32,7 +31,6 @@ export function formatCurrency(amount: number, decimals: number = 2): string {
 
 export function formatCurrencyWithRounding(
   amount: number,
-  decimals: number = 2,
   rounding: number = 0
 ): number {
   if (rounding > 0) {

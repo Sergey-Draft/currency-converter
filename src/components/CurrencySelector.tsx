@@ -166,7 +166,6 @@ export function CurrencySelector({ currencies, selected, onSelect, label }: Curr
                 filteredCurrencies.map((currency, index) => (
                   <div
                     key={currency.code}
-                    type="button"
                     className={`currency-modal-item ${currency.code === selected ? 'selected' : ''
                       } ${index === highlightedIndex ? 'highlighted' : ''}`}
                     onClick={() => handleSelect(currency.code)}

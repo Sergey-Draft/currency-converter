@@ -47,11 +47,13 @@ export function CurrencyConverter() {
   }, [rates]);
 
 
-  const debouncedSetAmountRef = useRef(
-    debounce((value: string) => {
+  const debouncedSetAmountRef = useRef<((value: string) => void) | null>(null);
+
+  useEffect(() => {
+    debouncedSetAmountRef.current = debounce((value: string) => {
       setAmount(value);
-    }, 250)
-  );
+    }, 250);
+  }, [setAmount]);
 
   useEffect(() => {
     setDisplayAmount(amount);
@@ -173,7 +175,7 @@ export function CurrencyConverter() {
                 const value = e.target.value;
                 if (value === '' || /^[\d,.\s]*$/.test(value)) {
                   setDisplayAmount(value);
-                  debouncedSetAmountRef.current(value);
+                  debouncedSetAmountRef.current?.(value);
                 }
               }}
             />
