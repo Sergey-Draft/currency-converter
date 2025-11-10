@@ -1,4 +1,5 @@
 # Currency Converter
+[Live Demo](https://currency-converter-c5u3.vercel.app/)
 
 A single-page currency converter web application built with React + TypeScript. Convert between currencies using live exchange rates with caching and offline support.
 
