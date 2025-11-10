@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useExchangeRates } from '../hooks/useExchangeRates';
@@ -48,7 +48,7 @@ export function CurrencyConverter() {
   }, [rates]);
 
 
-  const debouncedSetAmountRef = useRef<any>(null);
+  const debouncedSetAmountRef = useRef<((value: string) => void) | null>(null);
 
   useEffect(() => {
     debouncedSetAmountRef.current = debounce((value: string) => {
